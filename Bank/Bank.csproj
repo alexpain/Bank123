@@ -140,13 +140,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccessStatus.cs" />
     <Compile Include="Models\AdminTable.cs" />
-    <Compile Include="Models\Bank.cs" />
+    <Compile Include="Models\BankContext.cs" />
     <Compile Include="Models\CardInfo.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\ContractClient.cs" />

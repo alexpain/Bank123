@@ -5,11 +5,13 @@ namespace Bank.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class Bank : DbContext
+    public partial class BankContext : DbContext
     {
-        public Bank()
+        public BankContext()
             : base("name=Bank")
         {
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<AccessStatus> AccessStatus { get; set; }
