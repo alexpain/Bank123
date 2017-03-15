@@ -10,21 +10,18 @@ namespace Bank.Controllers
     {
         public ActionResult Index()
         {
+            using (BankEntities db = new BankEntities())
+            {
+                var clients = db.Client;
+                string strBack = "";
+                foreach (var client in clients)
+                    strBack += client.fullName + " " + client.birthday.ToString("d") + "<br>";
+
+                //    return strBack;
+            }
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+       
     }
 }

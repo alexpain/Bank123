@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="92492b9b4a0a483d94ce80d1eb1bcdb4" Name="Diagram1" ZoomLevel="27">
+        <EntityTypeShape EntityType="BankModel.AccessStatus" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.AdminTable" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.CardInfo" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Client" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.ContractClient" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Credit" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.CreditCard" Width="1.5" PointX="10.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.CreditInfo" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Currency" Width="1.5" PointX="3.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Deposit" Width="1.5" PointX="8.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.DepositInfo" Width="1.5" PointX="6" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Payments" Width="1.5" PointX="11.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.PaymentsInfo" Width="1.5" PointX="9" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Sale" Width="1.5" PointX="13.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.StatusClient" Width="1.5" PointX="3.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Transaction" Width="1.5" PointX="11.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.TypeServices" Width="1.5" PointX="9" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.TypeTransaction" Width="1.5" PointX="9" PointY="22.25" IsExpanded="true" />
+        <AssociationConnector Association="BankModel.FK_AdminTable_AccessStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Client_AccessStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Contract_CardInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Client_Contract" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Credit_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Deposit_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Payments_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_StatusClient" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Transaction_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Contract_Contract" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Credit_CreditInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Credit_Transaction" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_CreditInfo_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_DepositInfo_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Deposit_DepositInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Deposit_Transaction" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Payments_PaymentsInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Payments_Transaction" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Sale_StatusClient" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Sale_TypeServices" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Transaction_TypeServices" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK_Transaction_TypeTransaction" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

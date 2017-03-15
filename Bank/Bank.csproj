@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -52,6 +60,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -126,17 +136,103 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessStatus.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTable.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="bank.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bank.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bank.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bank.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bank.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CardInfo.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContractClient.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Credit.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCard.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditInfo.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Deposit.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepositInfo.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Payments.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentsInfo.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sale.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StatusClient.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypeServices.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypeTransaction.cs">
+      <DependentUpon>bank.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Bank.mdf" />
+    <Content Include="App_Data\Bank_log.ldf">
+      <DependentUpon>Bank.mdf</DependentUpon>
+    </Content>
+    <Content Include="bank.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bank.edmx</DependentUpon>
+      <LastGenOutput>bank.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="bank.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bank.edmx</DependentUpon>
+      <LastGenOutput>bank.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -145,6 +241,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="bank.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>bank.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="bank.edmx.diagram">
+      <DependentUpon>bank.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -171,7 +274,6 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +283,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
