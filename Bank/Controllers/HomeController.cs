@@ -15,10 +15,12 @@ namespace Bank.Controllers
                 var clients = db.Client;
                 string strBack = "";
                 foreach (var client in clients)
-                    strBack += client.fullName + " " + client.birthday.ToString("d") + "<br>";
+                    strBack += client.fullName + " " + client.birthday.ToString("d") + "\n ";
 
                 //    return strBack;
+                ViewBag.users = strBack;
             }
+            
             return View();
         }
 
