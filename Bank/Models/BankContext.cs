@@ -10,6 +10,8 @@ namespace Bank.Models
         public BankContext()
             : base("name=Bank")
         {
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
